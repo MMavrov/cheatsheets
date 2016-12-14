@@ -1,0 +1,59 @@
+Creating patch
+-------------------
+git format-patch -1 <sha>
+
+Applying patch
+-------------------
+git am
+
+Unstage any staged changes for a given file
+-------------------
+git reset
+
+Revert changes to modified files
+-------------------
+git reset --hard
+
+Remove all untracked files and directories
+-------------------
+git clean -fd
+
+Log all the changes from the last 2 commits
+-------------------
+git log -p -2
+
+Shows diff for staged changes
+-------------------
+git diff --cached
+
+Show the changes from a specific commit
+-------------------
+git show <rev>
+
+Add a remote repo A to an existing repo B
+-------------------
+git checkout B
+git remote add A /path/to/A  # declare A as a remote for B:
+git fetch A                  # to update all remote A branches on the B repo
+
+Rebase consecutive commits to the current branch
+-------------------
+dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 [master]
+           \
+            76cada - 62ecb3 - b886a0 [feature]
+
+git checkout -b newbranch b886a0
+git rebase --onto master 76cada^
+
+dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 - 62ecb3 - b886a0 [master]
+           \
+            76cada - 62ecb3 - b886a0 [feature]
+
+Get only a specific file from a stash
+-------------------
+git checkout stash@{0} -- <filename>
+
+Save it as another name
+-------------------
+git stash show stash@{0}:<full filename>  >  <newfile>
+git stash show stash@{0}:./<relative filename> < <newfile>
