@@ -1,0 +1,22 @@
+How to make powerline show the full edited file name?
+--------------------
+    $ locate powerline | grep themes/vim/__main__.json | sudo xargs vim
+
+    when the file is opened, insert
+    {
+        "segment_data": {
+            "file_directory": {
+                "args": {
+                    "shorten_cwd": false
+                }
+            } 
+        }
+    }
+
+How to set the Caps-lock key to Esc?
+--------------------
+dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+
+How to switch Esc and Caps-lock keys?
+--------------------
+dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
