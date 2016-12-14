@@ -1,0 +1,48 @@
+No clock/datetime in the panel is shown
+---------------------------------------
+	apt-cache policy indicator-datetime
+		- check if the app is installed
+
+	sudo apt-get install indicator-datetime
+		- if the latter one is FALSE
+
+	sudo dpkg-reconfigure --frontend noninteractive tzdata
+		- reconfigure the date time
+
+	sudo killall unity-panel-service
+		- restart the program for drawing the panel
+
+Icon of a program in the Launcher is not shown
+----------------------------------------------
+You should copy the proper icon in '/usr/share/pixmaps'
+	sudo cp my_eclipse_folder/icon.xpm /usr/share/pixmaps/
+
+Add/del a user to a group
+-------------------------
+	sudo adduser username groupname
+	sudo deluser username groupname
+
+libusb
+------
+libusb is a C library that gives applications easy access to USB devices on many different operating systems
+
+udev
+----
+udev supplies the system software with device events, manages permissions of device nodes and may create additional symlinks in the /dev directory, or renames network interfaces
+In '/etc/udev/rules.d/' you can create a udev file (rule) which grant read and write access to the users mentioned in it, for ALL USB devices that have a matching Vendor ID.
+
+ctags
+-----
+HOW TO INCLUDE MULTIPLE FILES: ctags -R -f .tags ./ ~/src/MDK/mdk_15.06.4_general/mdk/
+
+when problem with not available socket
+------
+lsof | grep 9997
+
+unzip tar file
+------
+tar -zxfv ~/path/to/the/file
+
+dump bin file as float in console
+------
+od -tfF filename.bin
